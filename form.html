@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm" autocomplete="on">
+        <label for="fname">First Name :</label><br>
+        <input type="text" id="fname" name="firstname"><br><br>
+
+        <label for="lname">Last Name :</label><br>
+        <input type="text" id="lname" name="lastname"><br><br>
+
+        <label for="contact">Contact No. :</label><br>
+        <input type="tel" id="contact" name="contact_no" maxlength="10"><br><br>
+
+        <label for="email">Email ID :</label><br>
+        <input type="email" id="email" name="email_id"><br><br>
+
+        <label for="pwd">Password :</label><br>
+        <input type="password" id="pwd" name="password" min="5"><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <script>
+        const form = document.getElementById('myForm');
+
+        form.addEventListener('submit', function(e){
+
+            const formData = new FormData(form);
+
+            const formvalue = {};
+
+            formData.forEach(function(key, value){
+                formvalue[key] = value;
+            });
+
+            console.log(`${key} : ${value}`);
+        });
+        
+    </script>
+</body>
+</html>
